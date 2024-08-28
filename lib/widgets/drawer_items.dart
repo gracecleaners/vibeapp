@@ -50,7 +50,7 @@ class _DrawerItemsState extends State<DrawerItems> {
                       bottom: 16, // Adjust the bottom margin as needed
                       left: 16,   // Adjust the left margin as needed
                       child: Text(
-                        "John Doe",
+                        "Oscarlincoln",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 24,

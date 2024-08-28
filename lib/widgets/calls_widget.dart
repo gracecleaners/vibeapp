@@ -1,72 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:vibeapp/const/colors.dart';
-import 'package:vibeapp/view/pages/chat_screen.dart';
 
-class ChatWidget extends StatefulWidget {
-  const ChatWidget({super.key});
-
-  @override
-  _ChatWidgetState createState() => _ChatWidgetState();
-}
-
-class _ChatWidgetState extends State<ChatWidget> {
-  final ScrollController _scrollController = ScrollController();
-  double _scrollProgress = 0.0;
-
-  @override
-  void initState() {
-    super.initState();
-    _scrollController.addListener(_updateScrollProgress);
-  }
-
-  void _updateScrollProgress() {
-    setState(() {
-      if (_scrollController.hasClients) {
-        final maxScrollExtent = _scrollController.position.maxScrollExtent;
-        final viewportHeight = _scrollController.position.viewportDimension;
-        _scrollProgress = maxScrollExtent > 0
-            ? _scrollController.offset / (maxScrollExtent - viewportHeight)
-            : 0.0;
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    _scrollController.removeListener(_updateScrollProgress);
-    _scrollController.dispose();
-    super.dispose();
-  }
+class CallsWidget extends StatelessWidget {
+  const CallsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        
+         Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Divider(),
+        ),
         ListView.builder(
-          controller: _scrollController,
           padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           itemCount: 8,
           itemBuilder: (context, index) {
             return Column(
               children: [
                 InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen()));
-                  },
+                  onTap: () {},
                   child: Container(
                     margin: EdgeInsets.symmetric(vertical: 12),
                     child: Row(
                       children: [
-                        Container(
-                          alignment: Alignment.center,
-                          height: 10,
-                          width: 10,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFFF5800),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
                         SizedBox(width: 5),
                         Container(
                           decoration: BoxDecoration(
@@ -93,37 +50,38 @@ class _ChatWidgetState extends State<ChatWidget> {
                               ),
                               SizedBox(height: 8),
                               Text(
-                                "Let me send you the pdf version",
+                                "12 MINUTES AGO",
                                 maxLines: 1,
-                                style: TextStyle(color: Colors.black54),
+                                style: TextStyle(color: Colors.black54, fontSize: 10),
                               ),
                             ],
                           ),
                         ),
                         Spacer(),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                        Row(
                           children: [
-                            Text(
-                              "08:22",
-                              style: TextStyle(fontSize: 10, color: Color(0xFFFF5800), fontWeight: FontWeight.bold),
+                            
+                            Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(color: Coloors.primary.withOpacity(0.8), width: 3),
+                              ),
+                              child: Icon(Icons.arrow_upward, size: 16,color: Coloors.primary,),
                             ),
-                            SizedBox(height: 5),
+                            SizedBox(width: 10,),
                             Container(
                               alignment: Alignment.center,
-                              height: 20,
-                              width: 20,
+                              height: 20, 
+                              width: 20, 
                               decoration: BoxDecoration(
-                                color: Color(0xFFFF5800),
-                                borderRadius: BorderRadius.circular(20),
+                                color: Coloors.primary,
+                                borderRadius: BorderRadius.circular(20)
                               ),
-                              child: Text(
-                                "4",
-                                style: TextStyle(color: Colors.white, fontSize: 12),
-                              ),
+                              child: Text("4", style: TextStyle(color: Colors.white),),
                             ),
+                            
                           ],
-                        ),
+                        )
                       ],
                     ),
                   ),

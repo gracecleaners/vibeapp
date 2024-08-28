@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vibeapp/const/colors.dart';
+import 'package:vibeapp/view/pages/calls.dart';
 import 'package:vibeapp/view/pages/chat.dart';
-import 'package:vibeapp/widgets/chat_widget.dart';
+import 'package:vibeapp/view/pages/contact.dart';
 import 'package:vibeapp/widgets/drawer_items.dart';
 
 class MainHome extends StatefulWidget {
@@ -29,9 +30,9 @@ class _MainHomeState extends State<MainHome> {
 
   /// List of pages for each tab
   List<Widget> pages = [
-    Container(),
+    CallsPage(),
     ChatsPage(),
-    Container(),
+    ContactsPage(),
   ];
 
   int current = 0;

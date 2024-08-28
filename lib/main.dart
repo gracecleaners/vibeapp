@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vibeapp/view/pages/chat_screen.dart';
 import 'package:vibeapp/view/pages/home_screen.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: MainHome()
+      // home: ChatScreen(),
     );
   }
 }
