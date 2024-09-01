@@ -29,7 +29,6 @@ class ChatScreen extends StatelessWidget {
                               padding: const EdgeInsets.only(top: 20, bottom: 20, right: 16, left: 45),
                               margin: const EdgeInsets.only(bottom: 20, left: 30),
                               decoration: BoxDecoration(
-                                // color: Colors.grey.shade200,
                                 color: Coloors.primary,
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -45,7 +44,7 @@ class ChatScreen extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(35),
                                   color: Colors.white,
-                                  border: Border.all(color: Coloors.primary,) //
+                                  border: Border.all(color: Coloors.primary)
                                 ),
                                 child: CircleAvatar(
                                   radius: 35, // Adjust the radius to fit your design
@@ -81,7 +80,7 @@ class ChatScreen extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(35),
                                   color: Colors.white,
-                                  border: Border.all(color: Coloors.primary,) //
+                                  border: Border.all(color: Coloors.primary)
                                 ),
                                 child: CircleAvatar(
                                   radius: 35, // Adjust the radius to fit your design
@@ -171,43 +170,40 @@ class ChatScreen extends StatelessWidget {
                         icon: Icon(Icons.phone_in_talk_outlined,
                             color: Colors.white),
                       ),
-                      Spacer(),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Allan Junior",
-                            style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Text(
-                            "",
-                            style: TextStyle(color: Colors.white70, fontSize: 14),
-                          ),
-                        ],
+                      SizedBox(width: 10), // Add some spacing between icon and title
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Allan Junior",
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                            SizedBox(height: 10), // Adjusted to fit better within AppBar
+                            Text(
+                              "",
+                              style: TextStyle(color: Colors.white70, fontSize: 14),
+                            ),
+                          ],
+                        ),
                       ),
-                      Spacer(),
+                      IconButton(
+                        style: IconButton.styleFrom(
+                          backgroundColor: Colors.white.withOpacity(0.5),
+                        ),
+                        onPressed: () {},
+                        icon: Icon(Icons.video_call_outlined,
+                            color: Colors.white),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.more_vert, color: Colors.white),
+                      ),
                     ],
                   ),
-                  actions: [
-                    IconButton(
-                      style: IconButton.styleFrom(
-                        backgroundColor: Colors.white.withOpacity(0.5),
-                      ),
-                      onPressed: () {},
-                      icon: Icon(Icons.video_call_outlined,
-                          color: Colors.white),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.more_vert, color: Colors.white),
-                    ),
-                  ],
                 ),
               ],
             ),
@@ -216,7 +212,7 @@ class ChatScreen extends StatelessWidget {
             top: 100, // Adjust this value to set half of the image on the app bar
             left: MediaQuery.of(context).size.width / 2 - 65, // Center the image horizontally
             child: CircleAvatar(
-              radius: 65, // Adjust the radius to fit your design
+              radius: 60, // Adjust the radius to fit your design
               backgroundColor: Colors.white,
               backgroundImage: AssetImage('assets/images/okumu.png'), // Replace with your image path
             ),

@@ -42,32 +42,34 @@ class _ChatWidgetState extends State<ChatWidget> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        
         ListView.builder(
           controller: _scrollController,
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           itemCount: 8,
           itemBuilder: (context, index) {
             return Column(
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChatScreen()),
+                    );
                   },
                   child: Container(
-                    margin: EdgeInsets.symmetric(vertical: 12),
+                    margin: const EdgeInsets.symmetric(vertical: 12),
                     child: Row(
                       children: [
                         Container(
                           alignment: Alignment.center,
-                          height: 10,
-                          width: 10,
+                          height: 5,
+                          width: 5,
                           decoration: BoxDecoration(
-                            color: Color(0xFFFF5800),
-                            borderRadius: BorderRadius.circular(20),
+                            color: const Color(0xFFFF5800),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Container(
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
@@ -77,49 +79,58 @@ class _ChatWidgetState extends State<ChatWidget> {
                             borderRadius: BorderRadius.circular(40),
                             child: Image.asset(
                               "assets/images/okumu${index + 1}.png",
-                              height: 65,
-                              width: 65,
+                              height: 55,
+                              width: 55,
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20),
+                        const SizedBox(width: 10), // Added spacing for better layout
+                        Flexible(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 "Allan Junior",
-                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                overflow: TextOverflow.ellipsis, // Prevent overflow
                               ),
-                              SizedBox(height: 8),
+                              const SizedBox(height: 8),
                               Text(
-                                "Let me send you the pdf version",
-                                maxLines: 1,
+                                "Let me send you the pdf version of the document",
+                                maxLines: 1, // Limit text to one line
+                                overflow: TextOverflow.ellipsis, // Truncate text with ellipsis
                                 style: TextStyle(color: Colors.black54),
                               ),
                             ],
                           ),
                         ),
-                        Spacer(),
+                        // const Spacer(),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               "08:22",
-                              style: TextStyle(fontSize: 10, color: Color(0xFFFF5800), fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: Color(0xFFFF5800),
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Container(
                               alignment: Alignment.center,
-                              height: 20,
-                              width: 20,
+                              height: 15,
+                              width: 15,
                               decoration: BoxDecoration(
-                                color: Color(0xFFFF5800),
-                                borderRadius: BorderRadius.circular(20),
+                                color: const Color(0xFFFF5800),
+                                borderRadius: BorderRadius.circular(15),
                               ),
-                              child: Text(
+                              child: const Text(
                                 "4",
-                                style: TextStyle(color: Colors.white, fontSize: 12),
+                                style: TextStyle(color: Colors.white, fontSize: 10),
                               ),
                             ),
                           ],

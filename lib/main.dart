@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vibeapp/view/pages/chat_screen.dart';
 import 'package:vibeapp/view/pages/home_screen.dart';
+import 'package:vibeapp/widgets/bottom_nav.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vibeapp/view/pages/status_screen.dart';
 import 'package:vibeapp/widgets/chat_widget.dart';
 import 'package:vibeapp/widgets/circle_image.dart';
 import 'package:vibeapp/widgets/drawer_items.dart';
@@ -23,24 +24,32 @@ class ChatsPage extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
-            child: Divider(),
+            padding: const EdgeInsets.only(top: 20),
           ),
           SizedBox(
             height: 80, // Adjust the height to fit the circle images
             child: Row(
               children: [
-                SizedBox(width: 10,),
-                Text("STORY", style: TextStyle(fontSize: 18, color: Colors.black26),),
-                SizedBox(width: 10,),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "STORY",
+                  style: TextStyle(fontSize: 18, color: Colors.black26),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
                 Container(
-                  width: 1, 
+                  width: 1,
                   height: 40,
                   decoration: BoxDecoration(
                     color: Colors.black26,
                   ),
                 ),
-                SizedBox(width: 2,),
+                SizedBox(
+                  width: 2,
+                ),
                 Expanded(
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
@@ -48,6 +57,17 @@ class ChatsPage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return CircleImage(
                         imageUrl: imageUrls[index],
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => StatusView(
+                                        statusImages: [
+                                          'assets/images/okumu.png',
+                                          'assets/images/okumu2.png',
+                                        ],
+                                      )));
+                        },
                       );
                     },
                   ),
@@ -55,15 +75,21 @@ class ChatsPage extends StatelessWidget {
               ],
             ),
           ),
-          Expanded(  // Use Expanded here to allow ChatWidget to take up remaining space
-            child: ChatWidget(),  // Your chat widget containing messages
+          Expanded(
+            // Use Expanded here to allow ChatWidget to take up remaining space
+            child: ChatWidget(), // Your chat widget containing messages
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         shape: CircleBorder(),
         backgroundColor: Color(0xFFFF5800),
-        onPressed: (){}, child: Icon(Icons.chat, color: Colors.white,),),
+        onPressed: () {},
+        child: Icon(
+          Icons.chat,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }

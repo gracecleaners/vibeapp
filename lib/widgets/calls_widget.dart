@@ -9,8 +9,8 @@ class CallsWidget extends StatelessWidget {
     return Stack(
       children: [
          Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Divider(),
+          padding: const EdgeInsets.only(top: 20),
+          
         ),
         ListView.builder(
           padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
@@ -34,8 +34,8 @@ class CallsWidget extends StatelessWidget {
                             borderRadius: BorderRadius.circular(40),
                             child: Image.asset(
                               "assets/images/okumu${index + 1}.png",
-                              height: 65,
-                              width: 65,
+                              height:55,
+                              width: 55,
                             ),
                           ),
                         ),
@@ -66,18 +66,18 @@ class CallsWidget extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 border: Border.all(color: Coloors.primary.withOpacity(0.8), width: 3),
                               ),
-                              child: Icon(Icons.arrow_upward, size: 16,color: Coloors.primary,),
+                              child: Icon(Icons.arrow_upward, size: 10,color: Coloors.primary,),
                             ),
                             SizedBox(width: 10,),
                             Container(
                               alignment: Alignment.center,
-                              height: 20, 
-                              width: 20, 
+                              height: 15, 
+                              width: 15, 
                               decoration: BoxDecoration(
                                 color: Coloors.primary,
-                                borderRadius: BorderRadius.circular(20)
+                                borderRadius: BorderRadius.circular(15)
                               ),
-                              child: Text("4", style: TextStyle(color: Colors.white),),
+                              child: Text("4", style: TextStyle(color: Colors.white, fontSize: 10),),
                             ),
                             
                           ],
