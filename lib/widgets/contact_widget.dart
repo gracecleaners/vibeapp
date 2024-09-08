@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vibeapp/const/colors.dart';
+import 'package:vibeapp/view/pages/profile_screen.dart';
 
 class ContactWidget extends StatelessWidget {
   const ContactWidget({super.key});
@@ -13,7 +14,10 @@ class ContactWidget extends StatelessWidget {
         return Column(
           children: [
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()));
+              },
               child: Container(
                 margin: const EdgeInsets.symmetric(vertical: 12),
                 child: Row(
@@ -27,14 +31,16 @@ class ContactWidget extends StatelessWidget {
                         children: [
                           Text(
                             "Allan Junior",
-                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
                             overflow: TextOverflow.ellipsis, // Prevent overflow
                           ),
                           const SizedBox(height: 8),
                           Text(
                             "Sometimes it's better to be alone",
                             maxLines: 1, // Limit text to one line
-                            overflow: TextOverflow.ellipsis, // Truncate text with ellipsis
+                            overflow: TextOverflow
+                                .ellipsis, // Truncate text with ellipsis
                             style: TextStyle(color: Colors.black54),
                           ),
                         ],
@@ -86,7 +92,8 @@ class ContactWidget extends StatelessWidget {
           child: CircleAvatar(
             radius: 30, // Adjust the radius as needed
             backgroundColor: Colors.transparent,
-            backgroundImage: AssetImage("assets/images/okumu.png"), // Use AssetImage for local images
+            backgroundImage: AssetImage(
+                "assets/images/okumu.png"), // Use AssetImage for local images
             child: Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -105,7 +112,9 @@ class ContactWidget extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.white,
-              border: Border.all(color: Coloors.primary), // Background color for the notification icon
+              border: Border.all(
+                  color: Coloors
+                      .primary), // Background color for the notification icon
             ),
             child: Center(
               child: Text(

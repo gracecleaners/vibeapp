@@ -83,7 +83,7 @@ class _StatusViewState extends State<StatusView> {
           ),
           // Progress bar
           Positioned(
-            top: 20,
+            top: 40,
             left: 0,
             right: 0,
             child: LinearProgressIndicator(
@@ -95,23 +95,66 @@ class _StatusViewState extends State<StatusView> {
           ),
           // Navigation controls
           Positioned(
-            top: 20,
+            top: 50,
             left: 20,
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Coloors.primary, width: 3),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(40),
+                child: Image.asset(
+                  "assets/images/okumu.png",
+                  height: 55,
+                  width: 55,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 50,
+            left: 100,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Allan Junior",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                SizedBox(height: 10),
+                Text(
+                  "12 MINUTES AGO",
+                  style: TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 10),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            top: 50,
+            right: 20,
             child: IconButton(
-              icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+              icon: Icon(Icons.more_vert, color: Colors.white),
               onPressed: () {
                 Navigator.pop(context);
               },
             ),
           ),
+          // Status counter centered at the bottom
           Positioned(
-            top: 20,
-            right: 20,
-            child: IconButton(
-              icon: Icon(Icons.close, color: Colors.white),
-              onPressed: () {
-                Navigator.pop(context);
-              },
+            bottom: 20,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Text(
+                '${_currentIndex + 1} of ${widget.statusImages.length}',
+                style: TextStyle(color: Colors.white, fontSize: 14),
+              ),
             ),
           ),
         ],
@@ -120,13 +163,4 @@ class _StatusViewState extends State<StatusView> {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: StatusView(
-      statusImages: [
-        'assets/images/status1.png',
-        'assets/images/status2.png',
-      ],
-    ),
-  ));
-}
+

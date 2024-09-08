@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vibeapp/const/colors.dart';
+import 'package:vibeapp/view/pages/video_chat.dart';
 import 'package:vibeapp/widgets/circle_image.dart'; // Ensure this import is correct
 
 class ChatScreen extends StatelessWidget {
@@ -26,30 +27,35 @@ class ChatScreen extends StatelessWidget {
                         child: Stack(
                           children: [
                             Container(
-                              padding: const EdgeInsets.only(top: 20, bottom: 20, right: 16, left: 45),
-                              margin: const EdgeInsets.only(bottom: 20, left: 30),
+                              padding: const EdgeInsets.only(
+                                  top: 20, bottom: 20, right: 16, left: 45),
+                              margin:
+                                  const EdgeInsets.only(bottom: 20, left: 30),
                               decoration: BoxDecoration(
                                 color: Coloors.primary,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: const Text(
                                 "Good morning Allan, how are you doing today. I was told that you are opening up a youtube channel, what content are you gonna be teaching?",
-                                style: TextStyle(fontSize: 15, color: Colors.white),
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.white),
                               ),
                             ),
                             Positioned(
-                              top: 10, // Adjust this value to set half of the image on the app bar
+                              top:
+                                  10, // Adjust this value to set half of the image on the app bar
                               left: 0, // Center the image horizontally
                               child: Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(35),
-                                  color: Colors.white,
-                                  border: Border.all(color: Coloors.primary)
-                                ),
+                                    borderRadius: BorderRadius.circular(35),
+                                    color: Colors.white,
+                                    border: Border.all(color: Coloors.primary)),
                                 child: CircleAvatar(
-                                  radius: 35, // Adjust the radius to fit your design
+                                  radius:
+                                      35, // Adjust the radius to fit your design
                                   backgroundColor: Colors.white,
-                                  backgroundImage: AssetImage('assets/images/okumu.png'), // Replace with your image path
+                                  backgroundImage: AssetImage(
+                                      'assets/images/okumu.png'), // Replace with your image path
                                 ),
                               ),
                             ),
@@ -62,30 +68,36 @@ class ChatScreen extends StatelessWidget {
                         child: Stack(
                           children: [
                             Container(
-                              padding: const EdgeInsets.only(top: 20, bottom: 20, right: 45, left: 16),
-                              margin: const EdgeInsets.only(bottom: 20, right: 30),
+                              padding: const EdgeInsets.only(
+                                  top: 20, bottom: 20, right: 45, left: 16),
+                              margin:
+                                  const EdgeInsets.only(bottom: 20, right: 30),
                               decoration: BoxDecoration(
                                 color: Colors.grey.shade200,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: const Text(
                                 "Good morning, am doing good \nI was thinking of teaching django framework, ofcourse am gonna start with python basics",
-                                style: TextStyle(fontSize: 15,),
+                                style: TextStyle(
+                                  fontSize: 15,
+                                ),
                               ),
                             ),
                             Positioned(
-                              top: 10, // Adjust this value to set half of the image on the app bar
+                              top:
+                                  10, // Adjust this value to set half of the image on the app bar
                               right: 0, // Center the image horizontally
                               child: Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(35),
-                                  color: Colors.white,
-                                  border: Border.all(color: Coloors.primary)
-                                ),
+                                    borderRadius: BorderRadius.circular(35),
+                                    color: Colors.white,
+                                    border: Border.all(color: Coloors.primary)),
                                 child: CircleAvatar(
-                                  radius: 35, // Adjust the radius to fit your design
+                                  radius:
+                                      35, // Adjust the radius to fit your design
                                   backgroundColor: Colors.white,
-                                  backgroundImage: AssetImage('assets/images/okumu1.png'), // Replace with your image path
+                                  backgroundImage: AssetImage(
+                                      'assets/images/okumu1.png'), // Replace with your image path
                                 ),
                               ),
                             ),
@@ -113,7 +125,8 @@ class ChatScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       IconButton(
-                        style: IconButton.styleFrom(backgroundColor: Coloors.primary),
+                        style: IconButton.styleFrom(
+                            backgroundColor: Coloors.primary),
                         icon: Icon(Icons.camera_alt_outlined),
                         onPressed: () {},
                         color: Colors.white,
@@ -127,13 +140,15 @@ class ChatScreen extends StatelessWidget {
                         ),
                       ),
                       IconButton(
-                        style: IconButton.styleFrom(backgroundColor: Coloors.primary),
+                        style: IconButton.styleFrom(
+                            backgroundColor: Coloors.primary),
                         icon: Icon(Icons.send),
                         onPressed: () {},
                         color: Colors.white,
                       ),
                       IconButton(
-                        style: IconButton.styleFrom(backgroundColor: Coloors.primary),
+                        style: IconButton.styleFrom(
+                            backgroundColor: Coloors.primary),
                         icon: Icon(Icons.keyboard_voice_outlined),
                         onPressed: () {},
                         color: Colors.white,
@@ -170,7 +185,8 @@ class ChatScreen extends StatelessWidget {
                         icon: Icon(Icons.phone_in_talk_outlined,
                             color: Colors.white),
                       ),
-                      SizedBox(width: 10), // Add some spacing between icon and title
+                      SizedBox(
+                          width: 10), // Add some spacing between icon and title
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -182,10 +198,13 @@ class ChatScreen extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),
-                            SizedBox(height: 10), // Adjusted to fit better within AppBar
+                            SizedBox(
+                                height:
+                                    10), // Adjusted to fit better within AppBar
                             Text(
                               "",
-                              style: TextStyle(color: Colors.white70, fontSize: 14),
+                              style: TextStyle(
+                                  color: Colors.white70, fontSize: 14),
                             ),
                           ],
                         ),
@@ -194,7 +213,12 @@ class ChatScreen extends StatelessWidget {
                         style: IconButton.styleFrom(
                           backgroundColor: Colors.white.withOpacity(0.5),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => VideoCallScreen()));
+                        },
                         icon: Icon(Icons.video_call_outlined,
                             color: Colors.white),
                       ),
@@ -209,12 +233,15 @@ class ChatScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 100, // Adjust this value to set half of the image on the app bar
-            left: MediaQuery.of(context).size.width / 2 - 65, // Center the image horizontally
+            top:
+                100, // Adjust this value to set half of the image on the app bar
+            left: MediaQuery.of(context).size.width / 2 -
+                65, // Center the image horizontally
             child: CircleAvatar(
               radius: 60, // Adjust the radius to fit your design
               backgroundColor: Colors.white,
-              backgroundImage: AssetImage('assets/images/okumu.png'), // Replace with your image path
+              backgroundImage: AssetImage(
+                  'assets/images/okumu.png'), // Replace with your image path
             ),
           ),
         ],
