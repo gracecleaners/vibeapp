@@ -136,7 +136,9 @@ class ProfilePage extends StatelessWidget {
                   right: screenWidth / 4 -
                       80, // Centering the circular image horizontally
                   child: InkWell(
-                    onTap: () {}, // Call the onTap callback when tapped
+                    onTap: () {
+                      
+                    }, // Call the onTap callback when tapped
                     child: Stack(
                       clipBehavior: Clip
                           .none, // Ensures the notification count is not clipped

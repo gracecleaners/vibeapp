@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vibeapp/const/colors.dart';
+import 'package:vibeapp/view/pages/home_screen.dart';
+import 'package:vibeapp/widgets/bottom_nav.dart';
 
 class IntroScreen extends StatelessWidget {
   @override
@@ -12,7 +14,8 @@ class IntroScreen extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/intro.png'), // Replace with your image asset
+                  image: AssetImage(
+                      'assets/images/intro.png'), // Replace with your image asset
                   fit: BoxFit.fitWidth,
                 ),
               ),
@@ -26,9 +29,11 @@ class IntroScreen extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Coloors.primary.withOpacity(0.8), // Start color with opacity
-                    Coloors.primary.withOpacity(0.8), // Start color with opacity
-                     // End color
+                    Coloors.primary
+                        .withOpacity(0.8), // Start color with opacity
+                    Coloors.primary
+                        .withOpacity(0.8), // Start color with opacity
+                    // End color
                   ],
                 ),
               ),
@@ -48,20 +53,27 @@ class IntroScreen extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 InkWell(
-                  onTap: (){},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MainHome()));
+                  },
                   child: Container(
-                    alignment: Alignment.center,
-                    height: 35,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.white),
-                    ),
-                    child: Text("Continue", style: TextStyle(fontSize: 18, color: Colors.white),)
-                     ),
+                      alignment: Alignment.center,
+                      height: 35,
+                      width: 130,
+                      decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Colors.white),
+                      ),
+                      child: Text(
+                        "Continue",
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      )),
                 )
               ],
             ),
@@ -71,4 +83,3 @@ class IntroScreen extends StatelessWidget {
     );
   }
 }
-
